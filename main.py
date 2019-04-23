@@ -39,21 +39,23 @@ def add_entry():
     error = ""
     if request.method == 'POST':
         blog_title = request.form['title']
+        blog_body = request.form['body']
+
         if not(blog_title):
             error = "Please enter a title for your blog post."
-            return render_template('add_entry.html', title_error = error, title = blog_title)
+            return render_template('add_entry.html', title_error = error, title = blog_title, body = blog_body)
 
-        blog_body = request.form['body']
+        
         if not(blog_body):
             error = "Please enter a body for your blog post."
-            return render_template('add_entry.html', body_error = error, body = blog_body)
+            return render_template('add_entry.html', body_error = error, body = blog_body, title = blog_title)
         else:
 
             blog = Blog(blog_title, blog_body)
             db.session.add(blog)
             db.session.commit()
-
-            return redirect('/blog')
+            
+            return redirect('/blog?id=' + str(blog.id))
             
     return render_template('add_entry.html')   
 

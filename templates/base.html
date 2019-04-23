@@ -5,17 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type = "text/css" href="background.css">
+        <link rel="stylesheet" type = "text/css" href="{{ url_for('static',filename='styles/background.css') }}">
         <title>{{title}}</title>
+        <nav>
+            <div class="nav">
+                <a href="/blog">Main page of the blog</a> |
+                <a href="/newpost">Add a New Entry</a> |
+            </div>
+        </nav>
     </head>
 <body>
-    <nav>
-        <a href="/blog">Main page of the blog</a> |
-        <a href="/newpost">Add a New Entry</a> |
+    <div class="row" id="row_of_pics">
+        <div class="column">
+            <img src="/static/styles/workshopsign.jpg" alt="Amanda's Workshop sign" style="height:2in">
+        </div>
+        <div class="column">
+            <img src="/static/styles/grantcute.jpeg" alt="Grant at the stream on a sunny day." style="height:2in">
+        </div>
         
-    </nav>
+        <div class="column">
+            <img src="/static/styles/turtlecode.jpg" alt="A computer screen with a rainbow design." style="height:2in">
+        </div>
+        <div class="column">
+                <img src="/static/styles/leaffloating.jpeg" alt="Amanda's Workshop sign" style="height:2in">
+        </div>
+        <div class="column">
+                <img src="/static/styles/jacksonhanging.jpg" alt="Amanda's Workshop sign" style="height:2in">
+        </div>
+    </div>
+    <div class="content">
+    
+    
     {% block content %}
+
     {% endblock %}
 
+    </div>
 </body>
 </html>

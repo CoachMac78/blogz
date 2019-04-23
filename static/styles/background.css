@@ -1,0 +1,58 @@
+body {
+    background-image: url("/static/styles/stones.jpg.jpeg");
+  }
+
+#body_box {
+  min-height:400px;
+  min-width: 400px;
+
+ } 
+
+#title_box {
+  min-width: 400px;
+}
+
+.error {
+  color: red;
+}
+
+h2 {
+  text-align: center
+}
+
+#row_of_pics.row {
+  background-color: rgb(185, 181, 174);
+  max-height: 2.15in;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+.content {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+  padding-top: 2em;
+  object-fit: contain;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  padding: 5px;
+  object-fit: contain;
+  border:15px black;
+}
+
+.nav {
+  background-color: white;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
